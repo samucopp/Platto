@@ -1,4 +1,4 @@
-import { apiRequest } from './apiCall';
+import { apiRequest } from './apiRequest';
 
 async function getAllUsers() {
     try {

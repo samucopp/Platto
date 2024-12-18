@@ -1,11 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import { logIn } from './api/logIn';
+import { getAllClosedCommands } from './api/command';
+
 function App() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    pruebas();
+  }, [])
+  async function pruebas(){
+    await logIn({ user_name: 'administrador', password: '12345' });
 
+    const products = await getAllClosedCommands();
+    console.log(products);
+
+  }
   return (
     <>
       <div>

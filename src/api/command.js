@@ -1,4 +1,4 @@
-import { apiRequest } from "./apiCall.js";
+import { apiRequest } from "./apiRequest";
 
 async function getAllOpenCommands() {
     try {
