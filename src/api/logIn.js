@@ -4,7 +4,7 @@ async function logIn(userData) {
     try {
         const response = await apiRequest('/login', 'POST', userData);
         if(response.token){
-        localStorage.setItem('token', response.token);
+        sessionStorage.setItem('token', response.token);
         }
         return response.token;
     } catch (error) {
