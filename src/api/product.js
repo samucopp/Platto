@@ -9,6 +9,15 @@ async function getAllProducts() {
     }
 }
 
+async function getAllProductsByCategory(id) {
+    try {
+        return await apiRequest(`/product/category/${id}`, 'GET');
+    } catch (error) {
+        console.error(`Error fetching products by category with ID ${id}:`, error);
+        throw new Error(`Unable to retrieve products by category with ID ${id}.`);
+    }
+}
+
 async function getProductById(id) {
     try {
         return await apiRequest(`/product/${id}`, 'GET');
@@ -45,4 +54,4 @@ async function deleteProduct(id) {
     }
 }
 
-export { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct };
+export { getAllProducts, getAllProductsByCategory, getProductById, createProduct, updateProduct, deleteProduct };
