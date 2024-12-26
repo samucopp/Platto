@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { IoIosAddCircleOutline } from "react-icons/io";
 import Product from "../product/Product";
 import ProductModal from "../product-modal/ProductModal";
 import { getAllProductsByCategory, updateProduct, deleteProduct, createProduct } from "../../api/product";
@@ -126,7 +127,8 @@ function ProductsList({ category, categories }) {
         <section className="products-container">
             <h2>Productos</h2>
             <button className="add-product-btn" onClick={openCreateModal}>
-                Nuevo Producto
+            <IoIosAddCircleOutline size={24} />
+
             </button>
             {products && products.length > 0 ? (
                 <ul>

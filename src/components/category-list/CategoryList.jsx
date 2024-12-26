@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import Category from "../category/Category";
 import CategoryModal from "../category-modal/CategoryModal";
 import { deleteCategory, updateCategory, createCategory } from "../../api/productCategory";
@@ -75,7 +76,7 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
         <section className="categories-container">
             <h2>Categorías</h2>
             <button className="add-product-btn" onClick={openCreateModal}>
-                Nueva Categoria
+                <IoIosAddCircleOutline size={24} />
             </button>
             {categories && categories.length > 0 ? (
                 <ul>
