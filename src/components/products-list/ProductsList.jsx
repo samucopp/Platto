@@ -50,11 +50,11 @@ function ProductsList({ category, categories }) {
     async function handleCreateProduct() {
         try {
             await createProduct(newProduct);
-            alert("Producto añadido correctamente.");
+            alert("Producto creado correctamente.");
             setShowCreateModal(false);
         } catch (error) {
-            console.error("Error al añadir el producto", error);
-            alert("No se pudo añadir el producto.");
+            console.error("Error al crear el producto", error);
+            alert("No se pudo crear el producto.");
         }
     }
     async function handleDelete() {
@@ -126,7 +126,7 @@ function ProductsList({ category, categories }) {
         <section className="products-container">
             <h2>Productos</h2>
             <button className="add-product-btn" onClick={openCreateModal}>
-                Añadir Producto
+                Nuevo Producto
             </button>
             {products && products.length > 0 ? (
                 <ul>

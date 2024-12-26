@@ -19,7 +19,19 @@ function CategoryModal({ title, type, onClose, data, actions }) {
                                 <input
                                     type="text"
                                     value={data.newCategoryName}
-                                    onChange={(e) => actions.onChange(e.target.value)}
+                                    onChange={(e) => actions.onChange({ ...data.newCategoryName, name: e.target.value})}
+                                />
+                            </label>
+                            <button className="save-btn" onClick={actions.onSave}>Guardar</button>
+                        </>
+                    )}
+                    {type === "add" && (
+                        <>
+                            <label>
+                                Nombre:
+                                <input
+                                    type="text"
+                                    onChange={(e) => actions.onChange({ ...data.newCategoryName, name: e.target.value})}
                                 />
                             </label>
                             <button className="save-btn" onClick={actions.onSave}>Guardar</button>

@@ -22,12 +22,17 @@ function Menu() {
     }, []);
 
     function updateCategoryInState(updatedCategory) {
-        setCategories((prevCategories) =>
-            prevCategories.map((cat) =>
-                cat.category_id === updatedCategory.category_id ? updatedCategory : cat
-            )
-        );
+        setCategories((prevCategories) => {
+            const exists = prevCategories.some((cat) => cat.category_id === updatedCategory.category_id);
+            if (exists) {
+                return prevCategories.map((cat) =>
+                    cat.category_id === updatedCategory.category_id ? updatedCategory : cat
+                );
+            }
+            return [...prevCategories, updatedCategory]; // Añade la nueva categoría si no existe
+        });
     }
+    
 
     function removeCategoryFromState(categoryId) {
         setCategories((prevCategories) =>
