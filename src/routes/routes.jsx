@@ -3,8 +3,8 @@ import ErrorPage from "../pages/ErrorPage";
 import Root from "../pages/Root";
 import Login from "../pages/login/Login";
 import LandingPage from "../pages/landingpage/LandingPage";
+import Menu from "../pages/menu/Menu";
 //import Home from "../pages/Home";
-//import Products from "../pages/Menu";
 //import Tables from "../pages/Tables";
 //import Users from "../pages/Users";
 //import History from "../pages/History";
@@ -23,13 +23,13 @@ const router = createBrowserRouter([
                 path: "login",
                 element: <Login />,
             },
+            {
+                path: "menu",
+                element: <Menu />,
+            },
 //            {
 //                path: "home",          // Página de inicio (misma que '/')
 //                element: <Home />,
-//            },
-//            {
-//                path: "menu",   // Resultará en '/categories'
-//                element: <Menu />,
 //            },
 //            {
 //                path: "tables",       // Resultará en '/tables'
