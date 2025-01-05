@@ -33,12 +33,11 @@ function Users() {
 
     function handleUserDeleted(userId) {
         setUsers(users.filter(user => user.user_id !== userId));
-        setSelectedUser(null); // Limpia el perfil seleccionado si fue eliminado
+        setSelectedUser(null);
     }
 
     return (
         <div className="users-page">
-            <Navbar />
             <section className="user-list-container">
                 <UserList
                     users={users}

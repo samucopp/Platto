@@ -42,7 +42,6 @@ function Menu() {
 
     return (
         <div className="menu-page">
-            <Navbar />
             <section className="categories-container">
                 <CategoryList
                     categories={categories}

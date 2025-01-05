@@ -33,7 +33,6 @@ function History() {
 
     return (
         <div className="history-page">
-            <Navbar />
             <section className="command-list-container">
                 <CommandList
                     commands={commands}
