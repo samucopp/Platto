@@ -3,7 +3,7 @@ import "./Command.css";
 function Command({ command }) {
     if (!command) {
         return (
-            <section className="command-container-wrapper">
+            <section className="command">
                 <h2>Comanda</h2>
                 <p>Selecciona una comanda para ver el detalle.</p>
             </section>
@@ -11,7 +11,7 @@ function Command({ command }) {
     }
 
     return (
-        <section className="command-container-wrapper">
+        <section className="command">
             <h2>Detalle de la Comanda #{command.command_id}</h2>
             <p><strong>Fecha:</strong> {new Date(command.date).toLocaleDateString()}</p>
             <p><strong>Hora:</strong> {command.time}</p>

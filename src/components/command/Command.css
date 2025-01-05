@@ -1,22 +1,4 @@
-.command-container-wrapper {
-    width: 70%; /* Ocupa el 70% del ancho */
-    height: 100vh; /* Asegura que ocupe toda la altura */
-    overflow-y: auto; /* Habilita el scroll para contenido largo */
-    padding: 20px;
-    background-color: #ffffff; /* Fondo blanco */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    font-family: "Courier New", Courier, monospace; /* Fuente estilo ticket */
-    color: var(--color, #213547); /* Hereda el color global */
-    display: flex; /* Alineación del contenido */
-    flex-direction: column; /* Alineación vertical del contenido */
-    justify-content: center; /* Centra verticalmente el mensaje cuando está vacío */
-    text-align: center; /* Centra horizontalmente el texto */
-    flex-grow: 1; /* Permite que este panel se expanda según el espacio disponible */
-}
-
-
-
-.command-container-wrapper h2 {
+.command h2 {
     margin: 0 0 20px;
     font-size: 2em;
     text-align: center;
@@ -24,12 +6,12 @@
     padding-bottom: 10px;
 }
 
-.command-container-wrapper p {
+.command p {
     margin: 5px 0;
     font-size: 1em;
 }
 
-.command-container-wrapper ul {
+.command ul {
     list-style: none;
     padding: 0;
     margin: 20px 0;
@@ -39,18 +21,18 @@
     padding-bottom: 10px;
 }
 
-.command-container-wrapper ul li {
+.command ul li {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
     font-size: 0.9em;
 }
 
-.command-container-wrapper ul li strong {
+.command ul li strong {
     font-weight: bold;
 }
 
-.command-container-wrapper .total {
+.command .total {
     margin-top: 20px;
     font-size: 1.2em;
     font-weight: bold;

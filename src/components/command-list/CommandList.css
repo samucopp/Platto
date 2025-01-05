@@ -1,29 +1,17 @@
-.command-list-container {
-    width: 30%; /* Ocupa el 30% del ancho */
-    height: 100vh; /* Asegura que ocupe toda la altura */
-    overflow-y: auto; /* Habilita el scroll para contenido largo */
-    background-color: var(--background-color, #f8f9fa); /* Fondo predeterminado */
-    border-right: 1px solid #ddd; /* Línea divisoria */
-    padding: 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    flex-shrink: 0; /* Evita que el tamaño del panel se reduzca */
-}
-
-
-.command-list-container h2 {
+.command-list h2 {
     margin: 0 0 10px;
     font-size: 1.5em;
     color: var(--color, #333); /* Color global */
     text-align: center;
 }
 
-.command-list-container ul {
+.command-list ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.command-list-container li {
+.command-list li {
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -35,12 +23,12 @@
     font-family: inherit; /* Hereda la fuente global */
 }
 
-.command-list-container li:hover {
+.command-list li:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.command-list-container li p {
+.command-list li p {
     margin: 5px 0;
     font-size: 0.9em;
     color: var(--color, #555); /* Hereda el color global */

@@ -2,7 +2,7 @@ import './CommandList.css';
 
 function CommandList({ commands, onSelectCommand }) {
     return (
-        <section className="command-list-container">
+        <section className="command-list">
             <h2>Comandas</h2>
             <ul>
                 {commands.length > 0 ? (
