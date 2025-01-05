@@ -1,0 +1,9 @@
+.history-page {
+    display: flex; /* Distribuye las secciones en fila */
+    flex-direction: row; /* Asegura que estén en una fila horizontal */
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    overflow: hidden; /* Evita el scroll horizontal */
+    margin: 0;
+}
+
