@@ -5,9 +5,9 @@ import Login from "../pages/login/Login";
 import LandingPage from "../pages/landingpage/LandingPage";
 import Menu from "../pages/menu/Menu";
 import Users from "../pages/users/Users";
+import History from "../pages/history/History";
 //import Home from "../pages/Home";
 //import Tables from "../pages/Tables";
-//import History from "../pages/History";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +31,10 @@ const router = createBrowserRouter([
                 path: "users",        // Resultará en '/users'
                 element: <Users />,
             },
+            {
+                path: "history",      // Resultará en '/history'
+                element: <History />,
+            },
             //            {
             //                path: "home",          // Página de inicio (misma que '/')
             //                element: <Home />,
@@ -38,10 +42,6 @@ const router = createBrowserRouter([
             //            {
             //                path: "tables",       // Resultará en '/tables'
             //                element: <Tables />,
-            //            },
-            //            {
-            //                path: "history",      // Resultará en '/history'
-            //                element: <History />,
             //            },
         ],
     },
