@@ -1,42 +1,44 @@
-/* Navbar general */
+body {
+    margin-top: 70px;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: var(--battleship-gray);
     padding: 10px 20px;
-    color: white;
-    position: fixed; /* Fija la barra en la parte superior */
+    position: fixed;
     top: 0;
-    left: 0;
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
-}
-
-/* Estilo de la parte izquierda de la barra */
-.navbar-left {
-    display: flex;
-    align-items: center;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-brand {
     font-size: 24px;
     font-weight: bold;
-    margin-right: 20px;
+    color: var(--jet);
 }
 
-/* Estilo de los botones e iconos */
+.navbar-brand:hover {
+    color: var(--silver);
+}
+
 .navbar-icon {
     background: none;
     border: none;
-    color: white;
+    color: var(--jet);
     cursor: pointer;
-    margin-left: 15px;
     transition: color 0.3s;
 }
 
 .navbar-icon:hover {
-    color: #f0a500;
+    color: var(--silver);
+}
+
+.navbar-icon:focus {
+    outline: none;
+    border: none;
 }
 
 /* Estilo para el menú desplegable */
@@ -65,46 +67,19 @@
 }
 
 .navbar-item a {
-    color: white;
     text-decoration: none;
+    color: var(--isabelline);
     display: block;
     transition: background-color 0.3s;
 }
 
 .navbar-item a:hover {
-    background-color: #555;
+    color: var(--taupe);
 }
 
 /* Estilo para la parte derecha de la barra */
 .navbar-right {
     display: flex;
     align-items: center;
-}
-
-/* Media Query para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar-right {
-        margin-top: 10px;
-    }
-
-    .navbar-menu {
-        position: static;
-        width: 100%;
-        display: none;
-    }
-
-    .navbar-menu.active {
-        display: flex;
-        justify-content: flex-start;
-    }
-}
-
-/* Espaciado para el contenido debajo de la barra */
-body {
-    margin-top: 60px; /* Da espacio para que el contenido no quede cubierto por la navbar */
+    margin-right: 20px;
 }

@@ -1,11 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FiLogOut, FiSettings } from 'react-icons/fi';
+import { IoInvertMode } from "react-icons/io5";
 import './NavBar.css';
+import '../../index.css';
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+            setIsDarkMode(true);
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        if (isDarkMode) {
+            document.documentElement.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+            setIsDarkMode(false);
+        } else {
+            document.documentElement.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+            setIsDarkMode(true);
+        }
+    };
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -40,6 +63,9 @@ function Navbar() {
             <div className="navbar-right">
                 <button className="navbar-icon" aria-label="Settings" onClick={toggleMenu}>
                     <FiSettings size={24} />
+                </button>
+                <button className="navbar-icon" aria-label="Toggle theme" onClick={toggleTheme}>
+                    <IoInvertMode size={24} />
                 </button>
                 <button className="navbar-icon" aria-label="Log out" onClick={handleLogout}>
                     <FiLogOut size={24} />
