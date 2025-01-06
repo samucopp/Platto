@@ -73,13 +73,9 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
     }
 
     return (
-        <section className="categories-container">
-            <h2>Categorías</h2>
-            <button className="add-product-btn" onClick={openCreateModal}>
-                <IoIosAddCircleOutline size={24} />
-            </button>
+        <section className="category-list">
             {categories && categories.length > 0 ? (
-                <ul>
+                <ul className="category-card-container">
                     {categories.map((category) => (
                         <Category
                             onClick={() => onSelectCategory(category)}
@@ -93,6 +89,9 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
             ) : (
                 <p>No hay categorías disponibles.</p>
             )}
+            <button className="add-category-btn" aria-label="Añadir Categoría" onClick={openCreateModal}>
+                <IoIosAddCircleOutline size={30} />
+            </button>
 
             {showDeleteModal && (
                 <CategoryModal

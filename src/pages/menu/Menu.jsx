@@ -28,7 +28,7 @@ function Menu() {
                     cat.category_id === updatedCategory.category_id ? updatedCategory : cat
                 );
             }
-            return [...prevCategories, updatedCategory]; // Añade la nueva categoría si no existe
+            return [...prevCategories, updatedCategory];
         });
     }
     

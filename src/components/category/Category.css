@@ -1,0 +1,27 @@
+.category-card {
+    background-color: var(--isabelline);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-title {
+    text-transform: uppercase;
+    color: var(--taupe);
+    font-weight: bold;
+}
+
+.category-title h3 {
+    margin: 0;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
