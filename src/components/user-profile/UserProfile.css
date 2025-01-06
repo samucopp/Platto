@@ -1,0 +1,39 @@
+.user-profile {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.user-profile-card {
+    background: var(--isabelline);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.user-profile-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.user-profile-title h2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: var(--taupe);
+}
+
+.user-profile-card p {
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+strong {
+    color: var(--taupe);
+}

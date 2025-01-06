@@ -28,15 +28,11 @@ function UserList({ users, onSelectUser, onCreateUser }) {
     }
 
     return (
-        <section className="users-container">
-            <h2>Staff</h2>
-            <button className="add-product-btn" onClick={openCreateModal}>
-                <IoIosAddCircleOutline size={24} />
-            </button>
+        <section className="user-list">
             {users && users.length > 0 ? (
-                <ul>
+                <ul className="user-card-container">
                     {users.map((user) => (
-                        <li
+                        <li className="user-card"
                             key={user.user_id}
                             onClick={() => onSelectUser(user)}
                             style={{ cursor: "pointer" }}
@@ -48,6 +44,9 @@ function UserList({ users, onSelectUser, onCreateUser }) {
             ) : (
                 <p>No hay usuarios disponibles.</p>
             )}
+            <button className="add-product-btn" aria-label="Añadir Personal" onClick={openCreateModal}>
+                <IoIosAddCircleOutline size={30} />
+            </button>
 
             {showCreateModal && (
                 <UserModal

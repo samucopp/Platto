@@ -21,7 +21,7 @@ function Users() {
     }, []);
 
     function handleUserCreated(newUser) {
-        setUsers([...users, newUser]); // Actualiza la lista localmente
+        setUsers([...users, newUser]);
     }
     function handleUserUpdated(updatedUser) {
         setUsers(users.map(user => user.user_id === updatedUser.user_id ? updatedUser : user));
