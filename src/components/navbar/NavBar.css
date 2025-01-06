@@ -1,5 +1,5 @@
 body {
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 .navbar {
@@ -27,6 +27,7 @@ body {
 .navbar-icon {
     background: none;
     border: none;
+    padding: 0.6em 1.2em;
     color: var(--jet);
     cursor: pointer;
     transition: color 0.3s;

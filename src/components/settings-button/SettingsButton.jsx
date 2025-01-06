@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { HiDotsVertical } from "react-icons/hi";
+import { PiDotsThreeCircleVertical } from "react-icons/pi";
+import { TbMoodEdit } from "react-icons/tb";
+import { MdDelete } from "react-icons/md";
 import "./SettingsButton.css";
 
 function SettingsButton({ onEdit, onDelete }) {
@@ -29,7 +31,6 @@ function SettingsButton({ onEdit, onDelete }) {
 
     useEffect(() => {
         const handleClickOutside = (e) => {
-            // Verifica si el clic fue fuera de settingsButton o dropdown
             if (
                 settingsButtonRef.current &&
                 !settingsButtonRef.current.contains(e.target)
@@ -37,11 +38,7 @@ function SettingsButton({ onEdit, onDelete }) {
                 closeSettings();
             }
         };
-
-        // Añadir el listener
         document.addEventListener("click", handleClickOutside);
-
-        // Limpiar el listener cuando el componente se desmonte
         return () => {
             document.removeEventListener("click", handleClickOutside);
         };
@@ -49,13 +46,19 @@ function SettingsButton({ onEdit, onDelete }) {
 
     return (
         <div className="settings-button" ref={settingsButtonRef}>
-            <button onClick={toggleSettings}>
-                <HiDotsVertical size={20} />
-            </button>
+            <div className="dots-button">
+                <button onClick={toggleSettings}>
+                    <PiDotsThreeCircleVertical size={30} />
+                </button>
+            </div>
             {settingsOpen && (
                 <div className="dropdown-settings">
-                    <button className="edit-button" onClick={handleEdit}>Editar</button>
-                    <button className="delete-button" onClick={handleDelete}>Eliminar</button>
+                    <button className="edit-button" onClick={handleEdit}>
+                        <TbMoodEdit size={30} />
+                    </button>
+                    <button className="delete-button" onClick={handleDelete}>
+                        <MdDelete size={30} />
+                    </button>
                 </div>
             )}
         </div>
