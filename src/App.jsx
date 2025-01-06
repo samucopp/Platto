@@ -7,8 +7,8 @@ import LandingPage from "./pages/landingpage/LandingPage";
 import Menu from "./pages/menu/Menu";
 import Users from "./pages/users/Users";
 import History from "./pages/history/History";
-//import Home from "../pages/Home";
-//import Tables from "../pages/Tables";
+import Home from "./pages/home/Home";
+import Tables from "./pages/tables/Tables";
 
 function App() {
     return (
@@ -20,6 +20,8 @@ function App() {
                 <Route path="menu" element={<Menu />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/history" element={<History />} />
+                <Route path="home" element={<Home />} />
+                <Route path="/tables" element={<Tables />} />
                 {/* Agrega aquí todas las páginas que quieras que tengan Navbar */}
             </Route>
 

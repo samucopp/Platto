@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../components/navbar/NavBar";
 import CategoryList from "../../components/category-list/CategoryList";
 import ProductsList from "../../components/products-list/ProductsList";
 import { getAllCategories } from "../../api/productCategory";

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../components/navbar/NavBar";
 import CommandList from "../../components/command-list/CommandList";
 import Command from "../../components/command/Command";
 import { getAllClosedCommands, getClosedCommandById } from "../../api/command";
@@ -32,7 +31,7 @@ function History() {
     };
 
     return (
-        <div className="history-page">
+        <main className="history-page">
             <section className="command-list-container">
                 <CommandList
                     commands={commands}
@@ -44,7 +43,7 @@ function History() {
                     command={selectedCommand}
                 />
             </section>
-        </div>
+        </main>
     );
 }
 

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../components/navbar/NavBar";
 import UserList from "../../components/user-list/UserList";
 import UserProfile from "../../components/user-profile/UserProfile";
 import { getAllUsers } from "../../api/user";
