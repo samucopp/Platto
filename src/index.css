@@ -65,8 +65,3 @@ button {
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.25s;
 }
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}

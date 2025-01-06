@@ -126,23 +126,29 @@ function ProductsList({ category, categories }) {
     return (
         <section className="products-container">
             <h2>Productos</h2>
-            <button className="add-product-btn" onClick={openCreateModal}>
-            <IoIosAddCircleOutline size={24} />
-
-            </button>
-            {products && products.length > 0 ? (
-                <ul>
-                    {products.map((product) => (
-                        <Product
-                            key={product.product_id}
-                            product={product}
-                            onEdit={openEditModal}
-                            onDelete={openDeleteModal} />
-                    ))}
-                </ul>
+            {category && (
+                <button className="add-product-btn" onClick={openCreateModal}>
+                    <IoIosAddCircleOutline size={24} />
+                </button>
+            )}
+            {category ? (
+                products && products.length > 0 ? (
+                    <ul>
+                        {products.map((product) => (
+                            <Product
+                                key={product.product_id}
+                                product={product}
+                                onEdit={openEditModal}
+                                onDelete={openDeleteModal} />
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No hay productos disponibles en esta categoría.</p>
+                )
             ) : (
                 <p>Selecciona una categoría para ver los productos.</p>
             )}
+
             {showDeleteModal && (
                 <ProductModal
                     title="Confirmar Eliminación"
