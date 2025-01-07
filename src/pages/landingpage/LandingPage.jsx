@@ -1,47 +1,40 @@
 import { useEffect, useState } from "react";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 
 function LandingPage() {
+    const [isTransitioning, setIsTransitioning] = useState(false);
     const navigate = useNavigate();
-    const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setProgress((prev) => {
-                if (prev >= 100) {
-                    clearInterval(interval);
-                    return 100;
-                }
-                return prev + 1;
-            });
-        }, 100);
+        const timer1 = setTimeout(() => {
+            setIsTransitioning(true);
+        }, 5000);
 
-        const timer = setTimeout(() => {
+        const timer2 = setTimeout(() => {
             navigate("/login");
-        }, 10000);
+        }, 8000);
 
         return () => {
-            clearTimeout(timer);
-            clearInterval(interval);
+            clearTimeout(timer1);
+            clearTimeout(timer2);
         };
     }, [navigate]);
 
     return (
         <div className="landing-page">
-            <div className="animation">
-                <h1>Platto</h1>
-                <p>Cargando...</p>
-                <div className="progress-bar">
-                    <div
-                        className="progress-bar-fill"
-                        style={{ width: `${progress}%` }}
-                    ></div>
-                </div>
+            <div className={`animation-container ${isTransitioning ? "fade-out" : "visible"}`}>
+                <DotLottieReact
+                    src="https://lottie.host/17be3493-9188-40cd-9abd-42c2f7219a42/wnjCZGU0dO.lottie"
+                    autoplay
+                />
+            </div>
+            <div className={`text-container ${isTransitioning ? "fade-in" : "hidden"}`}>
+                <h1 className="final-title">Platto</h1>
             </div>
         </div>
     );
 }
 
 export default LandingPage;
-
