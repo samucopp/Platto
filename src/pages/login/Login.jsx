@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FiLogIn } from "react-icons/fi";
 import { logIn } from '../../api/logIn';
+import './Login.css';
 
 function Login() {
     const [user_name, setUsername] = useState('');
@@ -22,15 +24,14 @@ function Login() {
         }
     };
     return (
-        <div className="login-page">
-            <header>
-                <h1>Monocromo</h1>
-                <h3>By Platto</h3>
-            </header>
-            <main>
-                <div className="login-container">
+        <main className="login-page">
+            <div className="login-container">
+                <div className="image-container">
+                    <img src="images/monocromo_logo_transparente.png" alt="logo del restaurante" />
+                </div>
+                <div className="login-form">
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group">
+                        <div className="form-name">
                             <label htmlFor="user_name"></label>
                             <input
                                 type="text"
@@ -42,7 +43,7 @@ function Login() {
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="form-password">
                             <label htmlFor="password"></label>
                             <input
                                 type="password"
@@ -53,11 +54,13 @@ function Login() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        <button type="submit">ENTRAR</button>
+                        <button className="login-button" aria-label="LogIn" type="submit">
+                            <FiLogIn size={24} />
+                        </button>
                     </form>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main >
     );
 }
 
