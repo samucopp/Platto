@@ -6,7 +6,7 @@
 }
 
 .user-profile-card {
-    background: var(--isabelline);
+    background-color: rgba(var(--silver-rgb), 0.3);
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;

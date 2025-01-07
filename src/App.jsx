@@ -17,10 +17,10 @@ function App() {
             <Route path="login" element={<Login />} />
 
             <Route element={<LayoutWithNavbar />}>
-                <Route path="menu" element={<Menu />} />
+                <Route path="/menu" element={<Menu />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/history" element={<History />} />
-                <Route path="home" element={<Home />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/tables" element={<Tables />} />
                 {/* Agrega aquí todas las páginas que quieras que tengan Navbar */}
             </Route>

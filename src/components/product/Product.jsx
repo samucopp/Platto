@@ -18,10 +18,12 @@ function Product({ product, onEdit, onDelete }) {
                     <p><strong>Precio:</strong> {((product.price / 100).toFixed(2)).replace('.00', '')} €</p>
                 </div>
             </div>
-            <SettingsButton
-                onEdit={() => onEdit(product)}
-                onDelete={() => onDelete(product)}
-            />
+            <div className="product-settings">
+                <SettingsButton
+                    onEdit={() => onEdit(product)}
+                    onDelete={() => onDelete(product)}
+                />
+            </div>
         </div>
     );
 }

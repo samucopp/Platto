@@ -47,10 +47,3 @@ button {
     padding: 0;
     transition: color 0.3s;
 }
-
-/* .category-settings .dropdown-settings button {
-    top: 45%;
-    left: -300%;
-    transform: translateY(-50%);
-    flex-direction: row;
-} */

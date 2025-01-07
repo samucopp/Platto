@@ -37,7 +37,9 @@ function UserList({ users, onSelectUser, onCreateUser }) {
                             onClick={() => onSelectUser(user)}
                             style={{ cursor: "pointer" }}
                         >
-                            {user.user_name}
+                            <div className="user-name-container">
+                                {user.user_name}
+                            </div>
                         </li>
                     ))}
                 </ul>

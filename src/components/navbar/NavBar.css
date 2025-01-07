@@ -65,6 +65,7 @@ body {
 
 .navbar-item {
     padding: 10px 20px;
+    font-weight: bold;
 }
 
 .navbar-item a {
@@ -72,6 +73,7 @@ body {
     color: var(--isabelline);
     display: block;
     transition: background-color 0.3s;
+
 }
 
 .navbar-item a:hover {
