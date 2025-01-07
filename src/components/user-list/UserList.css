@@ -29,12 +29,12 @@
     justify-content: center;
 }
 
-.user-card:hover, .add-product-btn:hover {
+.user-card:hover, .add-user-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.add-product-btn {
+.add-user-btn {
     background-color: rgba(var(--isabelline-rgb), 0.5);
     width: 70%;
     height: 64px;

@@ -47,7 +47,7 @@ function UserProfile({ user, onUserUpdated, onUserDeleted }) {
         }
     }
 
-    if (!user) return <p>Selecciona un usuario para ver sus detalles.</p>;
+    if (!user) return <p className="user-profile-message">Selecciona un usuario para ver sus detalles.</p>;
 
     return (
         <section className="user-profile">

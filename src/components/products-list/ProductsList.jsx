@@ -127,15 +127,13 @@ function ProductsList({ category, categories }) {
         <section className="product-list">
             {category ? (
                 products && products.length > 0 ? (
-                    <ul className='product-card-container'>
-                        {products.map((product) => (
+                        products.map((product) => (
                             <Product
                             key={product.product_id}
                             product={product}
                             onEdit={openEditModal}
                                 onDelete={openDeleteModal} />
-                            ))}
-                    </ul>
+                            ))
                 ) : (
                     <p>No hay productos disponibles en esta categoría.</p>
                 )
@@ -143,8 +141,8 @@ function ProductsList({ category, categories }) {
                 <p>Selecciona una categoría para ver los productos.</p>
             )}
             {category && (
-                <button className="add-product-btn" onClick={openCreateModal}>
-                    <IoIosAddCircleOutline size={24} />
+                <button className="add-product-btn" aria-label="Añadir Producto" onClick={openCreateModal}>
+                    <IoIosAddCircleOutline size={30} />
                 </button>
             )}
 

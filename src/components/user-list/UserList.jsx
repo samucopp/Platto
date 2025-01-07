@@ -44,7 +44,7 @@ function UserList({ users, onSelectUser, onCreateUser }) {
             ) : (
                 <p>No hay usuarios disponibles.</p>
             )}
-            <button className="add-product-btn" aria-label="Añadir Personal" onClick={openCreateModal}>
+            <button className="add-user-btn" aria-label="Añadir Personal" onClick={openCreateModal}>
                 <IoIosAddCircleOutline size={30} />
             </button>
 
