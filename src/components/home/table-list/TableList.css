@@ -1,0 +1,13 @@
+.home-table-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.home-table-card-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 70%;
+}
