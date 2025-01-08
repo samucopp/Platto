@@ -1,0 +1,30 @@
+.table-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(172px, 200px));
+    gap: 5%;
+    justify-content: space-evenly;
+}
+
+.add-table-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.add-table-btn {
+    background-color: rgba(var(--silver-rgb), 0.1);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    min-height: 120px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    color: var(--jet);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

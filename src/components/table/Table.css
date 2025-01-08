@@ -1,0 +1,29 @@
+.table-card {
+    background-color: rgba(var(--silver-rgb), 0.3);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.table-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.table-settings {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.table-card .dropdown-settings {
+    bottom: 20%;
+    left: -300%;
+    flex-direction: row-reverse;
+    top: 0;
+    transform: none;
+}
