@@ -6,7 +6,10 @@ function Product({ product, onEdit, onDelete }) {
         <div className="product-item">
             <div className="product-info">
                 <div className="product-name">
-                    <h3>{product.name}</h3>
+                    <h3>{product.name_short}</h3>
+                </div>
+                <div className="product-name">
+                    <h4>{product.name}</h4>
                 </div>
                 <div className="product-description">
                     <p><strong>Descripción:</strong> {product.description}</p>

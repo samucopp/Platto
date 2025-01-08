@@ -22,6 +22,13 @@
     margin: 0 0 8px;
     color: var(--taupe);
     text-align: left;
+    text-transform: uppercase;
+}
+.product-name h4 {
+    font-size: 16px;
+    margin: 0 0 8px;
+    color: var(--taupe);
+    text-align: left;
 }
 
 .product-description p,
