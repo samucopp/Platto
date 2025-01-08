@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import TableModal from "../../components/table-modal/TableModal";
 import TableList from "../../components/table-list/TableList";
 import { getAllTables, createTable, updateTable, deleteTable } from "../../api/table";
 import "./Tables.css";
@@ -23,11 +22,10 @@ const Tables = () => {
 
     async function handleTableCreated(newTable) {
         try {
-            const savedTable = await createTable(newTable); // Llama a la API
-            setTables([...tables, savedTable.table]); // Actualiza el estado con la respuesta del backend
+            const savedTable = await createTable(newTable);
+            setTables([...tables, savedTable.table]);
         } catch (error) {
             console.error("Error al crear la mesa:", error);
-            alert("No se pudo guardar la mesa en el servidor.");
         }
     }
 
@@ -42,7 +40,6 @@ const Tables = () => {
             }
         } catch (error) {
             console.error("Error al actualizar la mesa:", error);
-            alert("No se pudo actualizar la mesa en el servidor.");
         }
     }
 
@@ -53,7 +50,6 @@ const Tables = () => {
             setSelectedTable(null);
         } catch (error) {
             console.error("Error al eliminar la mesa:", error);
-            alert("No se pudo eliminar la mesa en el servidor.");
         }
     }
 

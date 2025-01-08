@@ -8,12 +8,6 @@ function UserModal({ title, type, onClose, data, actions }) {
             <div className="modal-content">
                 <h2 id="modal-title">{title}</h2>
                 <div className="modal-body">
-                    {type === "delete" && (
-                        <>
-                            <p>¿Estás seguro de eliminar el usuario "{data.name}"?</p>
-                            <button className="delete-btn" onClick={actions.onDelete}>Eliminar</button>
-                        </>
-                    )}
                     {type === "edit" && (
                         <>
                             <label>

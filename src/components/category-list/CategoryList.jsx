@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import Category from "../category/Category";
 import CategoryModal from "../category-modal/CategoryModal";
@@ -6,16 +6,10 @@ import { deleteCategory, updateCategory, createCategory } from "../../api/produc
 import "./CategoryList.css";
 
 function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCategoryDelete }) {
-    const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [newCategoryName, setNewCategoryName] = useState("");
-
-    function openDeleteModal(category) {
-        setSelectedCategory(category);
-        setShowDeleteModal(true);
-    }
 
     function openEditModal(category) {
         setSelectedCategory(category);
@@ -34,24 +28,19 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
             const response = await createCategory(newCategoryName);
             const newCategory = response.productCategory;
             onCategoryUpdate(newCategory);
-            alert("Categoria creada correctamente.");
             setShowCreateModal(false);
         } catch (error) {
             console.error("Error al crear el producto", error);
-            alert("No se pudo crear el producto.");
         }
     }
 
-    async function handleDelete() {
+    async function handleDelete(categoryId) {
         try {
-            await deleteCategory(selectedCategory.category_id);
-            alert("Categoría eliminada correctamente.");
-            onCategoryDelete(selectedCategory.category_id);
+            await deleteCategory(categoryId);
+            onCategoryDelete(categoryId);
         } catch (error) {
             console.error("Error al eliminar categoría", error);
-            alert("No se pudo eliminar.");
-        } finally {
-            setShowDeleteModal(false);
+            alert("No se puede eliminar una categoria con productos.");
         }
     }
 
@@ -66,7 +55,6 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
             onCategoryUpdate(updatedCategory);
         } catch (error) {
             console.error("Error al actualizar categoría", error);
-            alert("No se pudo actualizar.");
         } finally {
             setShowEditModal(false);
         }
@@ -82,7 +70,7 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
                             key={category.category_id}
                             category={category}
                             onEdit={openEditModal}
-                            onDelete={openDeleteModal}
+                            onDelete={() => handleDelete(category.category_id)}
                         />
                     ))}
                 </ul>
@@ -92,18 +80,6 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
             <button className="add-category-btn" aria-label="Añadir Categoría" onClick={openCreateModal}>
                 <IoIosAddCircleOutline size={30} />
             </button>
-
-            {showDeleteModal && (
-                <CategoryModal
-                    title="Confirmar Eliminación"
-                    type="delete"
-                    onClose={() => setShowDeleteModal(false)}
-                    data={{ name: selectedCategory.name }}
-                    actions={{
-                        onDelete: handleDelete
-                    }}
-                />
-            )}
 
             {showEditModal && (
                 <CategoryModal

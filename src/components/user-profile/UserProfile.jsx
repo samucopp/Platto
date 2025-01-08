@@ -6,17 +6,7 @@ import "./UserProfile.css";
 
 function UserProfile({ user, onUserUpdated, onUserDeleted }) {
     const [showEditModal, setShowEditModal] = useState(false);
-    const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [newUser, setNewUser] = useState(user);
-    const [showPassword, setShowPassword] = useState(false);
-
-    function togglePasswordVisibility() {
-        setShowPassword(!showPassword);
-    }
-
-    function openDeleteModal() {
-        setShowDeleteModal(true);
-    }
 
     function openEditModal() {
         setNewUser(user);
@@ -27,8 +17,6 @@ function UserProfile({ user, onUserUpdated, onUserDeleted }) {
         try {
             await deleteUser(user.user_id);
             onUserDeleted(user.user_id);
-            alert("Usuario eliminado correctamente.");
-            setShowDeleteModal(false);
         } catch (error) {
             console.error("Error al eliminar el usuario", error);
             alert("No se pudo eliminar.");
@@ -40,10 +28,8 @@ function UserProfile({ user, onUserUpdated, onUserDeleted }) {
             const response = await updateUser(user.user_id, newUser);
             onUserUpdated(response.user);
             setShowEditModal(false);
-            alert("Usuario actualizado correctamente.");
         } catch (error) {
             console.error("Error al actualizar usuario:", error);
-            alert("No se pudo actualizar el usuario.");
         }
     }
 
@@ -56,7 +42,7 @@ function UserProfile({ user, onUserUpdated, onUserDeleted }) {
                     <h2>{user.user_name}</h2>
                     <SettingsButton
                         onEdit={() => openEditModal(user)}
-                        onDelete={() => openDeleteModal(user)}
+                        onDelete={handleDelete}
                     />
                 </title>
                 <p><strong>ID:</strong> {user.user_id}</p>
@@ -72,17 +58,6 @@ function UserProfile({ user, onUserUpdated, onUserDeleted }) {
                     actions={{
                         onChange: setNewUser,
                         onSave: handleUpdate,
-                    }}
-                />
-            )}
-            {showDeleteModal && (
-                <UserModal
-                    title="Eliminar Usuario"
-                    type="delete"
-                    onClose={() => setShowDeleteModal(false)}
-                    data={{ user }}
-                    actions={{
-                        onDelete: handleDelete
                     }}
                 />
             )}

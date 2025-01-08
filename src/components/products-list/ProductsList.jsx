@@ -7,7 +7,6 @@ import "./ProductsList.css";
 
 function ProductsList({ category, categories }) {
     const [products, setProducts] = useState([]);
-    const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -33,11 +32,6 @@ function ProductsList({ category, categories }) {
         }
     }
 
-    function openDeleteModal(product) {
-        setSelectedProduct(product);
-        setShowDeleteModal(true);
-    }
-
     function openEditModal(product) {
         setSelectedProduct(product);
         setNewProduct(product);
@@ -50,23 +44,19 @@ function ProductsList({ category, categories }) {
     }
     async function handleCreateProduct() {
         try {
-            await createProduct(newProduct);
-            alert("Producto creado correctamente.");
+            const createdProduct =await createProduct(newProduct);
+            setProducts((prevProducts) => [...prevProducts, createdProduct]);
             setShowCreateModal(false);
         } catch (error) {
             console.error("Error al crear el producto", error);
-            alert("No se pudo crear el producto.");
         }
     }
-    async function handleDelete() {
+    async function handleDelete(productId) {
         try {
-            await deleteProduct(selectedProduct.product_id);
-            setProducts(products.filter((product) => product.product_id !== selectedProduct.product_id));
-            alert("Producto eliminado correctamente.");
-            setShowDeleteModal(false);
+            await deleteProduct(productId);
+            setProducts(products.filter((product) => product.product_id !== productId));
         } catch (error) {
             console.error("Error al eliminar el producto", error);
-            alert("No se pudo eliminar.");
         }
     }
     async function handleUpdate() {
@@ -82,7 +72,6 @@ function ProductsList({ category, categories }) {
             setShowEditModal(false);
         } catch (error) {
             console.error("Error al actualizar el producto", error);
-            alert("No se pudo actualizar.");
         }
     }
     function validateProductName(productName) {
@@ -132,7 +121,7 @@ function ProductsList({ category, categories }) {
                             key={product.product_id}
                             product={product}
                             onEdit={openEditModal}
-                                onDelete={openDeleteModal} />
+                            onDelete={() => handleDelete(product.product_id)} />
                             ))
                 ) : (
                     <p>No hay productos disponibles en esta categoría.</p>
@@ -146,17 +135,6 @@ function ProductsList({ category, categories }) {
                 </button>
             )}
 
-            {showDeleteModal && (
-                <ProductModal
-                    title="Confirmar Eliminación"
-                    type="delete"
-                    onClose={() => setShowDeleteModal(false)}
-                    data={{ newProduct }}
-                    actions={{
-                        onDelete: handleDelete
-                    }}
-                />
-            )}
             {showEditModal && (
                 <ProductModal
                     title="Editar Producto"
