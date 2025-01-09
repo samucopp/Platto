@@ -7,10 +7,10 @@ import "./Command.css";
 function Command({ table, command, onClose, onDeleteProduct, onDeleteCommand, onCloseCommand }) {
     return (
         <div className="home-command-card">
-            <button className="home-command-card-hide-button" onClick={onClose}>
-                <VscEyeClosed size={30} />
-            </button>
             <div className="home-command-card-header">
+                <button className="home-command-card-hide-button" onClick={onClose}>
+                    <VscEyeClosed size={30} />
+                </button>
                 <h2>MESA {command.table_id}</h2>
                 <h4>{command.pax} PAX</h4>
             </div>

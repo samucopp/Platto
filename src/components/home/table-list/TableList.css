@@ -1,13 +1,6 @@
 .home-table-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.home-table-card-container {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 3%;
+    padding: 40px 20px 40px 20px;
 }

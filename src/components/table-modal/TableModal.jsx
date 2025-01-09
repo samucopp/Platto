@@ -1,3 +1,5 @@
+import { VscEyeClosed } from "react-icons/vsc";
+import { CiSaveDown1 } from "react-icons/ci";
 import "./TableModal.css";
 
 function TableModal({ title, type, onClose, data, actions }) {
@@ -5,14 +7,18 @@ function TableModal({ title, type, onClose, data, actions }) {
     return (
         <div className="modal-backdrop" role="dialog" aria-labelledby="modal-title">
             <div className="modal-content">
-                <h2 id="modal-title">{title}</h2>
+                <div className="modal-header">
+                    <div className="modal-buttons">
+                        <button className="close-button" onClick={onClose}>
+                            <VscEyeClosed size={30} />
+                        </button>
+                        <button className="save-button" onClick={actions.onSave}>
+                            <CiSaveDown1 size={30} />
+                        </button>
+                    </div>
+                    <h2 id="modal-title">{title}</h2>
+                </div>
                 <div className="modal-body">
-                    {type === "delete" && (
-                        <>
-                            <p>¿Estás seguro de eliminar la mesa "{data.table_id}"?</p>
-                            <button className="delete-btn" onClick={actions.onDelete}>Eliminar</button>
-                        </>
-                    )}
                     {type === "edit" && (
                         <>
                             <label>
@@ -20,10 +26,9 @@ function TableModal({ title, type, onClose, data, actions }) {
                                 <input
                                     type="number"
                                     value={data.newTable.capacity}
-                                    onChange={(e) => actions.onChange({ ...data.newTable, capacity: e.target.value})}
+                                    onChange={(e) => actions.onChange({ ...data.newTable, capacity: e.target.value })}
                                 />
                             </label>
-                            <button className="save-btn" onClick={actions.onSave}>Guardar</button>
                         </>
                     )}
                     {type === "add" && (
@@ -32,14 +37,12 @@ function TableModal({ title, type, onClose, data, actions }) {
                                 Capacidad:
                                 <input
                                     type="number"
-                                    onChange={(e) => actions.onChange({ ...data.newTable, capacity: e.target.value})}
+                                    onChange={(e) => actions.onChange({ ...data.newTable, capacity: e.target.value })}
                                 />
                             </label>
-                            <button className="save-btn" onClick={actions.onSave}>Guardar</button>
                         </>
                     )}
                 </div>
-                <button className="close-btn" onClick={onClose}>Cerrar</button>
             </div>
         </div>
     );

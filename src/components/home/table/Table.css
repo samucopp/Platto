@@ -1,14 +1,13 @@
 .home-table-card {
     background-color: var(--isabelline);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px 10px 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .home-table-card:hover {
@@ -16,8 +15,14 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.home-table-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.home-table-card-name p {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: end;
+    color: var(--melon);
+}
+
+.home-table-card-capacity p {
+    font-size: 20px;
+    font-weight: 300;
 }

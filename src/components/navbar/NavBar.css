@@ -9,13 +9,14 @@
 }
 
 .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--jet);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--silver);
+    text-decoration: none;
 }
 
 .navbar-brand:hover {
-    color: var(--silver);
+    color: var(--melon);
 }
 
 .navbar-icon {
@@ -28,7 +29,7 @@
 }
 
 .navbar-icon:hover {
-    color: var(--silver);
+    color: var(--melon);
 }
 
 .navbar-icon:focus {
@@ -47,7 +48,7 @@
 }
 
 .navbar-menu.active {
-    max-height: 300px;  /* Ajusta el valor según el número de elementos */
+    max-height: 200px;  /* Ajusta el valor según el número de elementos */
 }
 
 .navbar-menu-list {
@@ -58,8 +59,9 @@
 }
 
 .navbar-item {
-    padding: 10px 20px;
-    font-weight: bold;
+    padding: 5px 30px 5px 30px;
+    font-weight: 400;
+    font-size: 20px;
 }
 
 .navbar-item a {

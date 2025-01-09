@@ -1,17 +1,7 @@
 .home-product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Permite múltiples columnas responsivas */
-    gap: 16px; /* Espaciado entre las tarjetas */
-    justify-items: center; /* Centra los elementos dentro de las celdas */
-    padding: 16px;
-    width: 100%; /* Asegúrate de que el contenedor use todo el ancho disponible */
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 5%;
+    padding: 40px;
 }
 
-.product-card-container {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}

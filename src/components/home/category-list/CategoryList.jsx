@@ -3,9 +3,9 @@ import "./CategoryList.css";
 
 function CategoryList({ categories, onSelectCategory }) {
     return (
-        <section className="category-list">
-            {categories && categories.length > 0 ? (
-                <ul className="category-card-container">
+        <section className="home-category-list">
+            {categories && categories.length > 0 && (
+                <ul className="home-category-card-container">
                     {categories.map((category) => (
                         <Category
                             onClick={() => onSelectCategory(category)}
@@ -14,8 +14,6 @@ function CategoryList({ categories, onSelectCategory }) {
                         />
                     ))}
                 </ul>
-            ) : (
-                <p>No hay categorías disponibles.</p>
             )}
         </section>
     );

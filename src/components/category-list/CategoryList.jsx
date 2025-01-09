@@ -74,7 +74,7 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
                         />
                     ))}
                     <button className="add-category-btn" aria-label="Añadir Categoría" onClick={openCreateModal}>
-                        <IoIosAddCircleOutline size={30} />
+                        <IoIosAddCircleOutline size={40} />
                     </button>
                 </ul>
             )}

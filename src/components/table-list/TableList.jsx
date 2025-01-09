@@ -48,7 +48,7 @@ const TableList = ({ tables, onCreateTable, onEditTable, onDeleteTable }) => {
                 />
             ))}
             <button className="add-table-btn" aria-label="Añadir Mesa" onClick={openCreateModal}>
-                <IoIosAddCircleOutline size={30} />
+                <IoIosAddCircleOutline size={40} />
             </button>
 
             {showModal && (

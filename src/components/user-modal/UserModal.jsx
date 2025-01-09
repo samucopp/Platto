@@ -1,3 +1,5 @@
+import { VscEyeClosed } from "react-icons/vsc";
+import { CiSaveDown1 } from "react-icons/ci";
 import "./UserModal.css";
 
 function UserModal({ title, type, onClose, data, actions }) {
@@ -6,7 +8,17 @@ function UserModal({ title, type, onClose, data, actions }) {
     return (
         <div className="modal-backdrop" role="dialog" aria-labelledby="modal-title">
             <div className="modal-content">
-                <h2 id="modal-title">{title}</h2>
+                <div className="modal-header">
+                    <div className="modal-buttons">
+                        <button className="close-button" onClick={onClose}>
+                            <VscEyeClosed size={30} />
+                        </button>
+                        <button className="save-button" onClick={actions.onSave}>
+                            <CiSaveDown1 size={30} />
+                        </button>
+                    </div>
+                    <h2 id="modal-title">{title}</h2>
+                </div>
                 <div className="modal-body">
                     {type === "edit" && (
                         <>
@@ -15,7 +27,7 @@ function UserModal({ title, type, onClose, data, actions }) {
                                 <input
                                     type="text"
                                     value={data.newUser.user_name}
-                                    onChange={(e) => actions.onChange({ ...data.newUser, user_name: e.target.value})}
+                                    onChange={(e) => actions.onChange({ ...data.newUser, user_name: e.target.value })}
                                 />
                             </label>
                             <label>
@@ -23,7 +35,7 @@ function UserModal({ title, type, onClose, data, actions }) {
                                 <input
                                     type="password"
                                     value={data.newUser.password}
-                                    onChange={(e) => actions.onChange({ ...data.newUser, password: e.target.value})}
+                                    onChange={(e) => actions.onChange({ ...data.newUser, password: e.target.value })}
                                 />
                             </label>
                             <label>
@@ -40,7 +52,6 @@ function UserModal({ title, type, onClose, data, actions }) {
                                     ))}
                                 </select>
                             </label>
-                            <button className="save-btn" onClick={actions.onSave}>Guardar</button>
                         </>
                     )}
                     {type === "add" && (
@@ -50,7 +61,7 @@ function UserModal({ title, type, onClose, data, actions }) {
                                 <input
                                     type="text"
                                     value={data.newUser.user_name}
-                                    onChange={(e) => actions.onChange({ ...data.newUser, user_name: e.target.value})}
+                                    onChange={(e) => actions.onChange({ ...data.newUser, user_name: e.target.value })}
                                 />
                             </label>
                             <label>
@@ -58,7 +69,7 @@ function UserModal({ title, type, onClose, data, actions }) {
                                 <input
                                     type="password"
                                     value={data.newUser.password}
-                                    onChange={(e) => actions.onChange({ ...data.newUser, password: e.target.value})}
+                                    onChange={(e) => actions.onChange({ ...data.newUser, password: e.target.value })}
                                 />
                             </label>
                             <label>
@@ -75,11 +86,9 @@ function UserModal({ title, type, onClose, data, actions }) {
                                     ))}
                                 </select>
                             </label>
-                            <button className="save-btn" onClick={actions.onSave}>Guardar</button>
                         </>
                     )}
                 </div>
-                <button className="close-btn" onClick={onClose}>Cerrar</button>
             </div>
         </div>
     );

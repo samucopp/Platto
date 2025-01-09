@@ -16,16 +16,22 @@
     align-items: flex-start;
 }
 
+.product-title {
+    border-bottom: 1px solid var(--taupe);
+}
+
 .product-name h3 {
-    font-size: 18px;
-    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
     color: var(--taupe);
     text-align: left;
     text-transform: uppercase;
 }
 .product-name h4 {
-    font-size: 16px;
-    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
     color: var(--taupe);
     text-align: left;
 }
@@ -33,8 +39,9 @@
 .product-description p,
 .product-allergens p,
 .product-price p {
-    font-size: 14px;
-    margin: 4px 0;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 8px;
     color: var(--taupe);
     text-align: left;
 }

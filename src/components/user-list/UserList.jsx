@@ -43,7 +43,7 @@ function UserList({ users, onSelectUser, onCreateUser }) {
                         </li>
                     ))}
                     <button className="add-user-btn" aria-label="Añadir Personal" onClick={openCreateModal}>
-                        <IoIosAddCircleOutline size={30} />
+                        <IoIosAddCircleOutline size={40} />
                     </button>
                 </ul>
             )}

@@ -32,8 +32,7 @@ function Command({ command }) {
                 <p><strong>Turno:</strong> {command.time}</p>
                 <p><strong>Atendido por:</strong> {command.user_name}</p>
             </div>
-
-            <h3>Productos</h3>
+            <h4>Productos:</h4>
             <ul>
                 {command.Products.map((product) => (
                     <li key={product._id}>
@@ -43,7 +42,7 @@ function Command({ command }) {
                     </li>
                 ))}
             </ul>
-            <h4>Total: {(command.total / 100).toFixed(2)} €</h4>
+            <h3>Total: {(command.total / 100).toFixed(2)} €</h3>
         </section>
     );
 }

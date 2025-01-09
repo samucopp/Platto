@@ -131,7 +131,7 @@ function ProductsList({ category, categories }) {
             )}
             {category && (
                 <button className="add-product-btn" aria-label="Añadir Producto" onClick={openCreateModal}>
-                    <IoIosAddCircleOutline size={30} />
+                    <IoIosAddCircleOutline size={0} />
                 </button>
             )}
 

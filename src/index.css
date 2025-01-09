@@ -44,20 +44,7 @@ body {
   min-height: 100vh;
   font-family: var(--font-family);
   line-height: var(--line-height);
-  font-weight: var(--font-weight);
   background-color: var(--white);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow: hidden;
-}
-
-/* Link styles */
-a {
-  text-decoration: inherit;
-  transition: color 0.3s;
-}
-
-/* Heading styles */
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }

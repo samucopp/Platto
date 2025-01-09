@@ -41,7 +41,7 @@ function ProductsList({ category, onAddProduct }) {
                     <p>No hay productos disponibles en esta categoría.</p>
                 )
             ) : (
-                <p>Selecciona una categoría para ver los productos.</p>
+                <p></p>
             )}
         </section>
     );

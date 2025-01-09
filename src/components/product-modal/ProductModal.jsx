@@ -1,10 +1,22 @@
+import { VscEyeClosed } from "react-icons/vsc";
+import { CiSaveDown1 } from "react-icons/ci";
 import "./ProductModal.css";
 
 function ProductModal({ title, type, onClose, data, actions }) {
     return (
         <div className="modal-backdrop" role="dialog" aria-labelledby="modal-title">
             <div className="modal-content">
-                <h2 id="modal-title">{title}</h2>
+                <div className="modal-header">
+                    <div className="modal-buttons">
+                        <button className="close-button" onClick={onClose}>
+                            <VscEyeClosed size={30} />
+                        </button>
+                        <button className="save-button" onClick={actions.onSave}>
+                            <CiSaveDown1 size={30} />
+                        </button>
+                    </div>
+                    <h2 id="modal-title">{title}</h2>
+                </div>
                 <div className="modal-body">
                     {type === "edit" && (
                         <>
@@ -18,8 +30,7 @@ function ProductModal({ title, type, onClose, data, actions }) {
                             </label>
                             <label>
                                 Nombre Completo:
-                                <input
-                                    type="text"
+                                <textarea
                                     value={data.newProduct.name}
                                     onChange={(e) => actions.onChange({ ...data.newProduct, name: e.target.value })}
                                 />
@@ -60,7 +71,6 @@ function ProductModal({ title, type, onClose, data, actions }) {
                                     onChange={(e) => actions.onChange({ ...data.newProduct, allergens: e.target.value })}
                                 />
                             </label>
-                            <button className="save-btn" onClick={actions.onSave}>Guardar</button>
                         </>
                     )}
                     {type === "add" && (
@@ -74,8 +84,7 @@ function ProductModal({ title, type, onClose, data, actions }) {
                             </label>
                             <label>
                                 Nombre Completo:
-                                <input
-                                    type="text"
+                                <textarea
                                     onChange={(e) => actions.onChange({ ...data.newProduct, name: e.target.value })}
                                 />
                             </label>
@@ -111,11 +120,9 @@ function ProductModal({ title, type, onClose, data, actions }) {
                                     onChange={(e) => actions.onChange({ ...data.newProduct, allergens: e.target.value })}
                                 />
                             </label>
-                            <button className="save-btn" onClick={actions.onSave}>Guardar</button>
                         </>
                     )}
                 </div>
-                <button className="close-btn" onClick={onClose}>Cerrar</button>
             </div>
         </div>
     );

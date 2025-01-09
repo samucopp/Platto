@@ -1,15 +1,20 @@
-
 .command {
     background-color: var(--white);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    width: 45%;
     margin: auto;
 }
 
 .command p {
-    color: black !important;
+    color: black;
+    font-size: 18px;
+}
+
+.command strong {
+    color: black;
+    font-weight: 500;
 }
 
 .command-header img {
@@ -27,20 +32,24 @@
 .command-info {
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid #ddd;
+    text-transform: capitalize;
+    border-bottom: 1px solid var(--silver);
     padding-bottom: 10px;
     margin-bottom: 5px;
 }
 
-.command h3 {
+.command h4 {
     text-align: left;
-    margin-bottom: 5px;;
+    margin-bottom: 5px;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .command ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 10px 0;
     border-top: 1px dashed #bbb;
     border-bottom: 1px dashed #bbb;
     padding-top: 10px;
@@ -58,9 +67,9 @@
     font-weight: bold;
 }
 
-.command .total {
+.command h3 {
     margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 700;
     text-align: right;
 }

@@ -7,7 +7,7 @@
     margin-bottom: 20px;
     padding: 20px;
     color: var(--taupe);
-    height: 100vh;
+    height: 100%;
 }
 
 .home-command-card-hide-button {
@@ -19,9 +19,18 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    height: 15%;
 }
 
-.home-command-card-header h2, h4,
+.home-command-card-header h2 {
+    font-weight: 600;
+}
+.home-command-card-header h4 {
+    font-weight: 400;
+}
+
+.home-command-card-header h2,
+h4,
 .home-command-card-total h3 {
     margin: 0;
 }
@@ -30,22 +39,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     overflow-y: auto;
-    max-height: 55%;
+    height: 85%;
+    width: 100%;
 }
 
 .home-command-card-product {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
+    width: 90%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #e0e0e0;
+    margin: 5px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
 }
 
 .home-command-card-product-quantity,
@@ -53,6 +60,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.home-command-card-product-quantity p {
+    font-size: 16px;
+}
+
+.home-command-card-product-header h4 {
+    font-weight: 500;
 }
 
 .home-command-card-product-delete-button:hover,
@@ -66,13 +81,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    bottom: 100px;
-    left: 0;
-    right: 0;
-    width: auto;
-    padding: 10px 20px;
-    margin-bottom: 10px;
+    height: 20%;
+    width: 100%;
 }
 
 .home-command-card-total {
@@ -82,9 +92,13 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(var(--silver-rgb), 0.2);
+}
+
+.home-command-card-total h3 {
+    color: var(--melon);
 }
 
 .home-command-card-actions {
