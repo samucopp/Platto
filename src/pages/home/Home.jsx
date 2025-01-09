@@ -6,6 +6,7 @@ import CategoryList from "../../components/home/category-list/CategoryList";
 import ProductsList from "../../components/home/products-list/ProductsList";
 import TableList from "../../components/home/table-list/TableList";
 import Command from "../../components/home/command/Command";
+import Modal from "../../components/home/table-modal/table-modal";
 import "./Home.css";
 
 function Home() {
@@ -14,6 +15,8 @@ function Home() {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedTable, setSelectedTable] = useState(null);
     const [command, setCommand] = useState({ Products: [] });
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedTableForCommand, setSelectedTableForCommand] = useState(null);
 
     useEffect(() => {
         async function fetchCategories() {
@@ -42,6 +45,26 @@ function Home() {
         fetchTables();
     }, []);
 
+    const handleModalSubmit = async (numPeople) => {
+        try {
+            const newCommand = await createCommand({
+                table_id: selectedTableForCommand.table_id,
+                pax: numPeople,
+            });
+
+            setCommand({ ...newCommand.command, Products: [] });
+            setSelectedTable({ ...selectedTableForCommand, status: 'ocupada' });
+            setIsModalOpen(false);
+        } catch (error) {
+            alert("Hubo un error al crear la comanda.");
+            console.error(error);
+        }
+    };
+
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+    };
+
     const handleTableSelect = async (table) => {
         try {
             console.log(table);
@@ -50,15 +73,8 @@ function Home() {
                 setCommand({ ...commandData, Products: commandData.Products || [] });
                 setSelectedTable(table);
             } else if (table.status === "disponible") {
-                const numPeople = prompt("¿Cuántas personas hay en la mesa?");
-                if (numPeople) {
-                    const newCommand = await createCommand({
-                        table_id: table.table_id,
-                        pax: parseInt(numPeople, 10),
-                    });
-                    setCommand({ ...newCommand, Products: [] });
-                    setSelectedTable(table);
-                }
+                setSelectedTableForCommand(table);
+                setIsModalOpen(true);
             }
         } catch (error) {
             console.error("Error al manejar la selección de mesa:", error);
@@ -117,7 +133,7 @@ function Home() {
                 const updatedTableData = { ...selectedTable, status: 'disponible' };
                 await updateTable(selectedTable.table_id, updatedTableData);
                 setCommand(null);
-                setSelectedTable(null);
+                setSelectedTable(updatedTableData);
             } catch (error) {
                 alert("No se pudo cerrar la comanda o actualizar el estado de la mesa.");
                 console.error("Error al eliminar la comanda o actualizar la mesa:", error);
@@ -136,6 +152,11 @@ function Home() {
                     onSelectTable={handleTableSelect}
                 />
             </section>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={handleModalClose}
+                onSubmit={handleModalSubmit}
+            />
             <section className={`home-command-container ${command && selectedTable ? 'visible' : 'hidden'}`}>
                 {command && selectedTable && (
                     <Command
