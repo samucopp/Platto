@@ -136,7 +136,7 @@ function Home() {
                     onSelectTable={handleTableSelect}
                 />
             </section>
-            <section className="home-command-container">
+            <section className={`home-command-container ${command && selectedTable ? 'visible' : 'hidden'}`}>
                 {command && selectedTable && (
                     <Command
                         table={selectedTable}

@@ -72,6 +72,15 @@ async function getCompleteCommandById(id) {
     }
 }
 
+async function getCompleteCommandByTableId(id) {
+    try {
+        return await apiRequest(`/command/${id}/table-details`, 'GET');
+    } catch (error) {
+        console.error(`Error fetching complete command with table ID ${id}:`, error);
+        throw new Error(`Unable to retrieve complete command with table ID ${id}.`);
+    }
+}
+
 async function updateCommand(id, commandData) {
     try {
         return await apiRequest(`/command/${id}`, 'PUT', commandData);
@@ -126,6 +135,7 @@ export {
     addProductToCommand,
     getOpenCommandById,
     getCompleteCommandById,
+    getCompleteCommandByTableId,
     updateCommand,
     updateProductInCommand,
     closeCommand,

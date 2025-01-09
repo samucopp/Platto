@@ -1,7 +1,6 @@
 .tables-page {
-    margin-top: 65px;
     background-color: var(--isabelline);
-    max-width: 100%;
-    padding: 30px;
-    height: 100vh;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
 }
