@@ -8,12 +8,12 @@
 }
 
 .command p {
-    color: black;
+    color: var(--black);
     font-size: 18px;
 }
 
 .command strong {
-    color: black;
+    color: var(--black);
     font-weight: 500;
 }
 
@@ -25,7 +25,7 @@
 
 .command-title {
     margin-bottom: 5px;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--jet);
     padding-bottom: 10px;
 }
 
@@ -41,7 +41,7 @@
 .command h4 {
     text-align: left;
     margin-bottom: 5px;
-    color: black;
+    color: var(--black);
     font-size: 18px;
     font-weight: 500;
 }
@@ -50,8 +50,8 @@
     list-style: none;
     padding: 0;
     margin: 10px 0;
-    border-top: 1px dashed #bbb;
-    border-bottom: 1px dashed #bbb;
+    border-top: 1px dashed var(--jet);
+    border-bottom: 1px dashed var(--jet);
     padding-top: 10px;
     padding-bottom: 10px;
 }

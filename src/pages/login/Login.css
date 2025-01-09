@@ -45,14 +45,14 @@
     border-style: none;
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
-    color: var(--taupe);
+    color: var(--jet);
     text-align: center;
     font-size: large;
     outline: none;
 }
 
 .form-name input::placeholder, .form-password input::placeholder{
-    color: var(--taupe);
+    color: var(--jet);
     text-align: center;
 }
 
@@ -61,7 +61,7 @@
     border-style: none;
     border-radius: 10px;
     padding: 10px;
-    color: var(--taupe);
+    color: var(--jet);
     text-align: center;
     font-size: large;
     display: flex;

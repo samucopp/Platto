@@ -15,6 +15,7 @@
   --jet: #3A3530;
   --ash-gray: #A0C1B8;
   --white: #ffffff;
+  --black: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,11 +28,15 @@
   --taupe: #25211f;
   --battleship-gray: #4b4745;
   --silver: #827f7a;
-  --isabelline: #373635;
-  --melon: #3e312d;
-  --jet: #211e1b;
+  --silver-rgb: 188, 184, 177;
+  --isabelline: #6e6e6d;
+  --isabelline-rgb: 55, 54, 53;
+  --melon: #cbb7a6;
+  --jet: #cac2bb;
   --ash-gray: #536560;
-  --white: #000000;
+  --white: #00000085;
+  --black: #cac2bb;
+  ;
 }
 
 * {

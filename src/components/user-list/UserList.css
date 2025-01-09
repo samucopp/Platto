@@ -25,7 +25,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     text-transform: uppercase;
-    color: var(--taupe);
+    color: var(--jet);
     font-weight: bold;
     display: flex;
     align-items: center;

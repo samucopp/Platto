@@ -29,4 +29,5 @@
 .home-table-card-capacity p {
     font-size: 20px;
     font-weight: 300;
+    color: var(--jet);
 }

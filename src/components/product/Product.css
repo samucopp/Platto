@@ -17,14 +17,14 @@
 }
 
 .product-title {
-    border-bottom: 1px solid var(--taupe);
+    border-bottom: 1px solid var(--jet);
 }
 
 .product-name h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 5px;
-    color: var(--taupe);
+    color: var(--jet);
     text-align: left;
     text-transform: uppercase;
 }
@@ -32,7 +32,7 @@
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 4px;
-    color: var(--taupe);
+    color: var(--jet);
     text-align: left;
 }
 
@@ -42,7 +42,7 @@
     font-size: 16px;
     font-weight: 400;
     margin-top: 8px;
-    color: var(--taupe);
+    color: var(--jet);
     text-align: left;
 }
 
