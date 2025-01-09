@@ -1,8 +1,8 @@
 import "./Table.css";
 
-const Table = ({ table, onClick }) => {
+const Table = ({ table, onClick, className }) => {
     return (
-        <div className="home-table-card" onClick={onClick}>
+        <div className={`home-table-card ${className}`} onClick={onClick}>
             <div className='home-table-card-name'>
                 <p>{table.table_id}</p>
             </div>

@@ -9,6 +9,7 @@ function TableList({ tables, onSelectTable }) {
                     key={table.table_id}
                     table={table}
                     onClick={() => onSelectTable(table)}
+                    className={table.status === "ocupada" ? "occupied" : "available"} 
                 />
             ))}
         </section>
