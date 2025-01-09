@@ -1,15 +1,9 @@
-body {
-    margin-top: 60px;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--battleship-gray);
     padding: 10px 20px;
-    position: fixed;
-    top: 0;
     width: 100%;
     z-index: 1000;
 }

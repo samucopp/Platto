@@ -3,22 +3,26 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    overflow-y: auto;
+    padding: 40px 20px 40px 20px;
 }
 
 .category-card-container {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .add-category-btn {
-    background-color: rgba(var(--isabelline-rgb), 0.5);
-    width: 70%;
-    height: 64px;
-    border-radius: 10px;
+    background-color: rgba(var(--isabelline-rgb), 0.3);
+    width: 100%;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;

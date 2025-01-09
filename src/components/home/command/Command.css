@@ -1,0 +1,95 @@
+.home-command-card {
+    background-color: var(--isabelline);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    color: var(--taupe);
+    height: 100vh;
+}
+
+.home-command-card-hide-button {
+    display: flex;
+    justify-content: end;
+}
+
+.home-command-card-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.home-command-card-header h2, h4,
+.home-command-card-total h3 {
+    margin: 0;
+}
+
+.home-command-card-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    max-height: 55%;
+}
+
+.home-command-card-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.home-command-card-product-quantity,
+.home-command-card-product-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home-command-card-product-delete-button:hover,
+.home-command-card-hide-button:hover,
+.home-command-card-actions-delete-button:hover,
+.home-command-card-actions-save-button:hover {
+    color: var(--silver);
+}
+
+.home-command-card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    width: auto;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.home-command-card-total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-command-card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}

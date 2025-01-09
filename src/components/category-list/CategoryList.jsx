@@ -62,7 +62,7 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
 
     return (
         <section className="category-list">
-            {categories && categories.length > 0 ? (
+            {categories && categories.length > 0 && (
                 <ul className="category-card-container">
                     {categories.map((category) => (
                         <Category
@@ -73,13 +73,11 @@ function CategoryList({ categories, onSelectCategory, onCategoryUpdate, onCatego
                             onDelete={() => handleDelete(category.category_id)}
                         />
                     ))}
+                    <button className="add-category-btn" aria-label="Añadir Categoría" onClick={openCreateModal}>
+                        <IoIosAddCircleOutline size={30} />
+                    </button>
                 </ul>
-            ) : (
-                <p>No hay categorías disponibles.</p>
             )}
-            <button className="add-category-btn" aria-label="Añadir Categoría" onClick={openCreateModal}>
-                <IoIosAddCircleOutline size={30} />
-            </button>
 
             {showEditModal && (
                 <CategoryModal

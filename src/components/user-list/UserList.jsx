@@ -29,7 +29,7 @@ function UserList({ users, onSelectUser, onCreateUser }) {
 
     return (
         <section className="user-list">
-            {users && users.length > 0 ? (
+            {users && users.length > 0 && (
                 <ul className="user-card-container">
                     {users.map((user) => (
                         <li className="user-card"
@@ -42,13 +42,11 @@ function UserList({ users, onSelectUser, onCreateUser }) {
                             </div>
                         </li>
                     ))}
+                    <button className="add-user-btn" aria-label="Añadir Personal" onClick={openCreateModal}>
+                        <IoIosAddCircleOutline size={30} />
+                    </button>
                 </ul>
-            ) : (
-                <p>No hay usuarios disponibles.</p>
             )}
-            <button className="add-user-btn" aria-label="Añadir Personal" onClick={openCreateModal}>
-                <IoIosAddCircleOutline size={30} />
-            </button>
 
             {showCreateModal && (
                 <UserModal
