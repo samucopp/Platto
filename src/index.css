@@ -7,7 +7,7 @@
 
   --taupe: #463f3a;
   --battleship-gray: #8a817c;
-  --silver: #bcb8b1;
+  --silver: #77736e;
   --silver-rgb: 188, 184, 177;
   --isabelline: #f4f3ee;
   --isabelline-rgb: 244, 243, 238;
@@ -23,12 +23,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark theme colors */
 .dark-mode {
   --taupe: #25211f;
   --battleship-gray: #4b4745;
   --silver: #827f7a;
-  --silver-rgb: 188, 184, 177;
+  --silver-rgb: 120, 115, 110;
   --isabelline: #6e6e6d;
   --isabelline-rgb: 55, 54, 53;
   --melon: #cbb7a6;

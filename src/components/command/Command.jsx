@@ -21,12 +21,12 @@ function Command({ command }) {
                 <p><strong>Pax:</strong> {command.pax}</p>
             </div>
             <p className="command-info"> {new Date(command.date).toLocaleString('es-ES', {
-                weekday: 'long', // Día de la semana
-                year: 'numeric', // Año
-                month: 'long', // Mes
-                day: 'numeric', // Día
-                hour: '2-digit', // Hora
-                minute: '2-digit', // Minutos
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
             })}</p>
             <div className="command-info">
                 <p><strong>Turno:</strong> {command.time}</p>

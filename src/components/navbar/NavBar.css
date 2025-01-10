@@ -37,7 +37,6 @@
     border: none;
 }
 
-/* Estilo para el menú desplegable */
 .navbar-menu {
     display: flex;
     justify-content: flex-start;
@@ -48,7 +47,7 @@
 }
 
 .navbar-menu.active {
-    max-height: 200px;  /* Ajusta el valor según el número de elementos */
+    max-height: 200px;
 }
 
 .navbar-menu-list {
@@ -76,7 +75,6 @@
     color: var(--jet);
 }
 
-/* Estilo para la parte derecha de la barra */
 .navbar-right {
     display: flex;
     align-items: center;

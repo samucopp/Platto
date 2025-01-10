@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, onSubmit }) => {
     const handleSubmit = () => {
         if (numPeople && !isNaN(numPeople)) {
             onSubmit(parseInt(numPeople, 10));
-            setNumPeople("");  // Reset input
+            setNumPeople("");
         } else {
             alert("Por favor, ingrese un número válido.");
         }

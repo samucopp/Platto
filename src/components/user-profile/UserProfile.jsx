@@ -65,5 +65,4 @@ function UserProfile({ user, onUserUpdated, onUserDeleted }) {
     );
 }
 
-
 export default UserProfile;

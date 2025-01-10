@@ -22,7 +22,6 @@ function App() {
                 <Route path="/history" element={<History />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/tables" element={<Tables />} />
-                {/* Agrega aquí todas las páginas que quieras que tengan Navbar */}
             </Route>
 
             <Route path="*" element={<ErrorPage />} />
