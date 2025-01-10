@@ -21,6 +21,20 @@ Este proyecto es una aplicación web diseñada para la gestión eficiente de un 
 
 Este proyecto está construido con **React** para la interfaz de usuario y **Platto** como la API de backend para gestionar los aspectos clave del restaurante.
 
+### Backend (Platto)
+
+La API backend llamada **Platto** gestiona los siguientes aspectos:
+
+- **Gestión de Trabajadores**: Con roles y permisos específicos para cada tipo de trabajador.
+- **Gestión de Mesas**: Los camareros pueden asignar y actualizar mesas.
+- **Gestión de Productos y Categorías**: Los cocineros gestionan el menú.
+- **Comandas**: Los camareros gestionan las comandas en tiempo real.
+- **Histórico de Comandas**: Se almacenan las comandas cerradas para su posterior análisis.
+- **Autenticación Segura**: Mediante JWT y protección de contraseñas con bcrypt.
+
+Para usar esta aplicación, es necesario descargar la API de **Platto** desde el siguiente enlace:  
+[Platto-API](https://github.com/samucopp/Platto-API)
+
 ## Instalación
 
 ### Prerrequisitos
@@ -32,4 +46,26 @@ Este proyecto está construido con **React** para la interfaz de usuario y **Pla
 
 1. Clona el repositorio de este proyecto.
    ```bash
-   git clone https://github.com/tuusuario/gestor-hosteleria.git
+   git clone https://github.com/samucopp/Platto.git
+   ```
+
+2. Entra en la carpeta del proyecto.
+   ```bash
+   cd Platto
+   ```
+
+3. Instala las dependencias del proyecto.
+   ```bash
+   npm install
+   ```
+
+4. Inicia el proyecto.
+   ```bash
+   npm run dev
+   ```
+
+La aplicación debería estar disponible en tu navegador en http://localhost:5173
+
+## Contribuciones
+
+Si tienes alguna sugerencia para mejorar la aplicación o encuentras un bug, no dudes en abrir un issue en el repositorio de GitHub.
